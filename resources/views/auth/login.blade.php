@@ -1,4 +1,14 @@
-<x-guest-layout>
+<x-layout>
+    <x-page-heading>Log in</x-page-heading>
+
+    <x-forms.form method="POST" action="/login">
+        <x-forms.input label="Email" name="email" type="email"></x-forms.input>
+        <x-forms.input label="Password" name="password" type="password"></x-forms.input>
+
+        <x-forms.button>Log in</x-forms.button>
+    </x-forms.form>
+</x-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -44,4 +54,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}

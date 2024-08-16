@@ -1,4 +1,21 @@
-<x-guest-layout>
+<x-layout>
+    <x-page-heading>Register</x-page-heading>
+
+    <x-forms.form method="POST" action="/register" enctype="multipart/form-data">
+        <x-forms.input label="Name" name="name"></x-forms.input>
+        <x-forms.input label="Email" name="email" type="email"></x-forms.input>
+        <x-forms.input label="Password" name="password" type="password"></x-forms.input>
+        <x-forms.input label="Password confirmation" name="password_confirmation" type="password"></x-forms.input>
+
+        <x-forms.divider></x-forms.divider>
+
+        <x-forms.input label="Employer name" name="employer"></x-forms.input>
+        <x-forms.input label="Employer logo" name="logo" type="file"></x-forms.input>
+
+        <x-forms.button>Creat account</x-forms.button>
+    </x-forms.form>
+</x-layout>
+{{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +66,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
