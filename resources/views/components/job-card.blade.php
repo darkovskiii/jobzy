@@ -4,7 +4,11 @@
     <div class="self-start text-sm">{{ $job->employer->name }}</div>
 
     <div class="py-8">
-        <h3 class="group-hover:text-blue-800 text-xl font-bold">{{ $job->title }}</h3>
+        <h3 class="group-hover:text-blue-800 text-xl font-bold">
+            <a href="{{ $job->url }}" target="_blank">
+                {{ $job->title }}
+            </a>
+        </h3>
         <p class="text-sm mt-4">{{ $job->salary }}</p>
     </div>
 
@@ -14,7 +18,7 @@
                 <x-tag :$tag size="small"></x-tag>
             @endforeach
         </div>
-        <x-employer-logo :width="42"></x-employer-logo>
+        <x-employer-logo :employer="$job->employer" :width="42"></x-employer-logo>
         {{-- <img src="http://placehold.it/42/42" alt=""> --}}
     </div>
 </x-panel>
